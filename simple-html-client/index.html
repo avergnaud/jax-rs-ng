@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Test</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Hello</h1>
+
+    <script>
+        var objetJson = {
+            "id":"val1",
+            "title":"mon titre"
+        }
+
+        function post(path, method) {
+            method = method || "post"; 
+
+            var form = document.createElement("form");
+            form.setAttribute("method", method);
+            form.setAttribute("action", path);
+            form.setAttribute("target", "_blank");
+
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "objetJSON");
+            hiddenField.setAttribute("value", JSON.stringify(objetJson));
+            form.appendChild(hiddenField);
+
+            document.body.appendChild(form);
+
+            /* envoi v1 */
+            form.submit();
+        }
+
+        post('http://localhost:8080/resteasy/rest/some/pdf');
+    </script>
+</body>
+
+</html>

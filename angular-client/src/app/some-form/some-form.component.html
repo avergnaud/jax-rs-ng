@@ -1,0 +1,13 @@
+<p>some-form works!</p>
+<form
+  method="post"
+  action="{{ urlPath }}"
+  target="_blank"
+>
+  <input
+    type="hidden"
+    name="{{ paramName }}"
+    value="{{ someBean | json }}"
+  />
+  <input type="submit" value="Submit">
+</form>
